@@ -1,0 +1,11 @@
+function vpn() {
+    if [ $1 = "c" ]; then
+        sh ~/ppcd_vpn/vpn_connect.sh
+    elif [ $1 = "d" ]; then
+        sh ~/ppcd_vpn/vpn_disconnect.sh
+    elif [ $1 = "p" ]; then
+        security add-generic-password -U -a $USER -s "vpn_password" -w
+    else
+        echo "invalid command."
+    fi
+}
