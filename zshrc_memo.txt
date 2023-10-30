@@ -1,11 +1,20 @@
 function vpn() {
+	export VPN_HOST="07-KKS-OCN" # default
     if [ $1 = "c" ]; then
         sh ~/ppcd_vpn/vpn_connect.sh
     elif [ $1 = "d" ]; then
         sh ~/ppcd_vpn/vpn_disconnect.sh
     elif [ $1 = "p" ]; then
-        security add-generic-password -U -a $USER -s "vpn_password" -w
-    else
+	    security add-generic-password -U -a $USER -s "vpn_password" -w
+    elif [ $2 = "7" ]; then
+		export VPN_HOST="07-KKS-OCN"
+    elif [ $2 = "8" ]; then
+		export VPN_HOST="08-KKS-BBIQ"
+    elif [ $2 = "9" ]; then
+		export VPN_HOST="09-KKS-OCN_SSL"
+    elif [ $2 = "10" ]; then
+		export VPN_HOST="10-KKS-BBIQ_SSL"
+	else
         echo "invalid command."
     fi
 }

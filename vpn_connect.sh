@@ -2,15 +2,6 @@
 killall 'Cisco Secure Client' &> /dev/null
 /opt/cisco/secureclient/bin/vpn -s disconnect &> /dev/null
 
-# env
-export VPN_HOST7=07-KKS-OCN
-export VPN_HOST8=08-KKS-BBIQ
-export VPN_HOST9=10-KKS-OCN_SSL
-export VPN_HOST10=10-KKS-BBIQ_SSL
-
-# default env
-export VPN_HOST=${VPN_HOST7}
-
 # connect
 expect -c "
     log_user 0
