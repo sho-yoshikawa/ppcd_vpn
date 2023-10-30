@@ -1,5 +1,5 @@
 function vpn() {
-	export VPN_HOST="07-KKS-OCN" # default
+    export VPN_HOST="07-KKS-OCN" # default
     if [ $1 = "c" ]; then
         sh ~/ppcd_vpn/vpn_connect.sh
     elif [ $1 = "d" ]; then
